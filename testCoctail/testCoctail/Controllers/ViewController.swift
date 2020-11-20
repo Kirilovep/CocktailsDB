@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 protocol MainViewControllerDelegate: class {
     func update(_ categories : Categories?)

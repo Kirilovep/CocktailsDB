@@ -9,7 +9,6 @@ import Foundation
 
 class NetworkManager {
     
-    
     func loadAllDrinks(_ category: String,_ completionHandler: @escaping (DrinkList) -> Void ) {
         if let url = URL(string: "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=\(category)"){
             URLSession.shared.dataTask(with: url) { (data, responce, error ) in
