@@ -43,6 +43,10 @@ class ViewController: UIViewController, MainViewControllerDelegate {
         loadCategories()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
     //MARK: - IBActions -
     @IBAction func filterButtonTapped(_ sender: UIBarButtonItem) {
         let desVC = storyboard?.instantiateViewController(withIdentifier: identifierVC.filterVCName.rawValue) as! FilterViewController

@@ -14,12 +14,14 @@ class MainTableViewCell: UITableViewCell {
     @IBOutlet weak var coctailImageView: UIImageView!
     
     
+    
     //MARK: - Functions -
-    func configure(_ result: [DrinkList],indexPath : IndexPath) {
+    func configure(_ result: [DrinkList?],indexPath : IndexPath ) {
+        
         let drinks = result[indexPath.section]
-        let drink = drinks.drinks[indexPath.row]
-        nameLabel.text = drink.strDrink
-        let imageURL = URL(string: drink.strDrinkThumb)
+        let drink = drinks?.drinks[indexPath.row]
+        nameLabel.text = drink?.strDrink
+        let imageURL = URL(string: drink?.strDrinkThumb ?? " ")
         coctailImageView.kf.indicatorType = .activity
         coctailImageView.kf.setImage(with: imageURL)
         
